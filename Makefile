@@ -457,3 +457,7 @@ container-build: ## Build containers
 .PHONY: container-push
 container-push: ## Push containers (NOTE: catalog can't be built before bundle is pushed)
 	$(MAKE) docker-push bundle-push catalog-build catalog-push
+
+# Source-to-OLM deployment is kept in a separate makefile so the existing
+# development and release targets above retain their current behavior.
+-include Makefile.olm
